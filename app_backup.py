@@ -26,7 +26,7 @@ st.markdown(
     """
     Ask questions about your sales database using natural language.
 
-    **Powered by Qwen2.5-Coder + Ollama + SQLite**
+    **Powered by Gemini + SQLite**
     """
 )
 

@@ -1,11 +1,24 @@
-from langchain_ollama import ChatOllama
+import os
 
-MODEL_NAME = "qwen2.5-coder:3b"
+from dotenv import load_dotenv
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+load_dotenv()
 
 
-def get_llm():
-    return ChatOllama(
-        model=MODEL_NAME,
+DEFAULT_MODEL = "gemini-2.5-flash"
+
+
+def get_llm() -> ChatGoogleGenerativeAI:
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        raise ValueError(
+            "GEMINI_API_KEY is not set. Add it to your environment or .env file."
+        )
+
+    return ChatGoogleGenerativeAI(
+        model=os.getenv("GEMINI_MODEL", DEFAULT_MODEL),
+        google_api_key=api_key,
         temperature=0
     )
 
