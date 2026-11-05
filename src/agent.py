@@ -11,7 +11,7 @@ from .validator import (
     validate_sql
 )
 
-from .llm import get_llm
+from .llm import get_llm, response_to_text
 
 
 CORRECTION_PROMPT = """
@@ -68,7 +68,7 @@ def correct_sql(
 
     response = llm.invoke(prompt)
 
-    corrected_sql = response.content.strip()
+    corrected_sql = response_to_text(response)
 
     corrected_sql = corrected_sql.replace(
         "```sql",

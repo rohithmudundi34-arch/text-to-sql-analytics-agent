@@ -1,4 +1,4 @@
-from .llm import get_llm
+from .llm import get_llm, response_to_text
 
 
 SQL_PROMPT = """
@@ -63,7 +63,7 @@ def generate_sql(question, schema):
 
     response = llm.invoke(prompt)
 
-    sql = response.content.strip()
+    sql = response_to_text(response)
 
     # Remove markdown if model adds it
     sql = sql.replace("```sql", "")

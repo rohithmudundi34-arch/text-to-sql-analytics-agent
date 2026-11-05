@@ -7,7 +7,7 @@ then summarizes the results with Gemini.
 
 Set `GEMINI_API_KEY` to a Gemini API key. The app loads it from the process
 environment or a local `.env` file. Optionally set `GEMINI_MODEL` to select a
-Gemini model; the default is `gemini-2.5-flash`.
+Gemini model; the default is `gemini-3.8-flash`.
 
 Never commit your API key. `.env` is ignored by Git.
 
