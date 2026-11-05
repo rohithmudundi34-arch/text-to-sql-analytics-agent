@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+plotly
+python-dotenv
+sqlalchemy
+langchain
+langchain-community
+langchain-ollama
+langgraph
